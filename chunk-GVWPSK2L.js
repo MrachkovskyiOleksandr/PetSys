@@ -1,0 +1,1 @@
+import{ib as r,r as e}from"./chunk-M6VDVT7F.js";var n=(()=>{class t extends r{constructor(){super({name:"petitem"}),this.petitems=this.getDocs()}static{this.\u0275fac=function(o){return new(o||t)}}static{this.\u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{n as a};
