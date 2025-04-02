@@ -1,0 +1,59 @@
+<!-- <p>Page Petclinics is connected</p>
+
+<section>Page Title</section>
+<section>Clinic List (Name, Location, Services)</section>
+<section>Clinic Profile Link</section>
+<section>Search Bar</section>
+<section>Filter by Services/Location</section> -->
+
+<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+	<div class="documents-container">
+		<div class="documents-list">
+			<div
+				class="burger-wrap"
+				class="burger-wrap"
+				(click)="isMenuOpen=!isMenuOpen"
+				[class.burger-wrap--open]="isMenuOpen"
+			>
+				<div class="burger" [class.burger--close]="isMenuOpen"></div>
+			</div>
+			<div
+				class="documents-sidebar"
+				[class.documents-sidebar--open]="isMenuOpen"
+			>
+				<div class="documents-sidebar-content">
+					<div class="documents-sidebar__title">Pet Clinics</div>
+					<div>
+						<wbutton (click)="create()">Create</wbutton>
+					</div>
+
+					<div>
+						<petdrug-selector
+							[value]="clinic_drug"
+							(wChange)="clinic_drug = $event; load()"
+						></petdrug-selector>
+						<winput
+							[type]="'search'"
+							[clearable]="true"
+							(wChange)="setSearch($event)"
+							(wSubmit)="load()"
+						></winput>
+					</div>
+				</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div
+						*ngFor="let clinic of clinics"
+						class="documents-main-row"
+					>
+						<app-clinic
+							[clinics]="clinic"
+							(load)="load()"
+						></app-clinic>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

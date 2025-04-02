@@ -1,0 +1,61 @@
+<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+	<div class="documents-container">
+		<div class="documents-list">
+			<div
+				class="burger-wrap"
+				class="burger-wrap"
+				(click)="isMenuOpen=!isMenuOpen"
+				[class.burger-wrap--open]="isMenuOpen"
+			>
+				<div class="burger" [class.burger--close]="isMenuOpen"></div>
+			</div>
+			<div
+				class="documents-sidebar"
+				[class.documents-sidebar--open]="isMenuOpen"
+			>
+				<div class="documents-sidebar-content">
+					<div class="documents-sidebar__title">Places</div>
+					<div>
+						<wbutton (click)="create()">Create</wbutton>
+					</div>
+					<div>
+						<petdrug-selector
+							[value]="place_drug"
+							[disabled]="drugDisabled"
+							(wChange)="place_drug = $event; load()"
+						></petdrug-selector>
+						<petfood-selector
+							[value]="place_food"
+							[disabled]="foodDisabled"
+							(wChange)="place_food = $event; load()"
+						></petfood-selector>
+						<petitem-selector
+							[value]="place_item"
+							[disabled]="itemDisabled"
+							(wChange)="place_item = $event; load()"
+						></petitem-selector>
+						<winput
+							[type]="'search'"
+							[clearable]="true"
+							(wChange)="setSearch($event)"
+							(wSubmit)="load()"
+						></winput>
+					</div>
+				</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div
+						*ngFor="let place of places"
+						class="documents-main-row"
+					>
+						<app-places
+							[places]="place"
+							(load)="load()"
+						></app-places>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

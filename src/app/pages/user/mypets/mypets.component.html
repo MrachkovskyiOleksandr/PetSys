@@ -1,0 +1,68 @@
+<div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
+	<div class="documents-container">
+		<div class="documents-list">
+			<div
+				class="burger-wrap"
+				class="burger-wrap"
+				(click)="isMenuOpen=!isMenuOpen"
+				[class.burger-wrap--open]="isMenuOpen"
+			>
+				<div class="burger" [class.burger--close]="isMenuOpen"></div>
+			</div>
+			<div
+				class="documents-sidebar"
+				[class.documents-sidebar--open]="isMenuOpen"
+			>
+				<div class="documents-sidebar-content">
+					<div class="documents-sidebar__title">My Pets</div>
+					<div>
+						<wbutton (click)="create()">Create</wbutton>
+					</div>
+					<div>
+						<wselect
+							[placeholder]="'Species'"
+							[items]="['Cat','Dog']"
+							[clearable]="true"
+							(modelChange)="species=$event; load()"
+							[searchable]="true"
+						></wselect>
+						<wselect
+							[placeholder]="'Breed'"
+							[items]="['White','Black']"
+							[clearable]="true"
+							(modelChange)="breed=$event; load()"
+							[searchable]="true"
+						></wselect>
+						<wselect
+							[placeholder]="'Gender'"
+							[items]="['Male','Female']"
+							[clearable]="true"
+							(modelChange)="gender=$event; load()"
+						></wselect>
+						<wselect
+							[placeholder]="'Adoptable'"
+							[items]="['Adoptable','Not adoptable']"
+							[clearable]="true"
+							(modelChange)="adoptable=$event; load()"
+						></wselect>
+					</div>
+					<div>
+						<winput
+							[type]="'search'"
+							(wChange)="setSearch($event)"
+							(wSubmit)="load()"
+							[clearable]="true"
+						></winput>
+					</div>
+				</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div *ngFor="let pet of mypets" class="documents-main-row">
+						<app-pet [pet]="pet"></app-pet>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
