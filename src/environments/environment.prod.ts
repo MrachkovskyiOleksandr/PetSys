@@ -2,8 +2,8 @@ export const environment = {
 	roles: [],
 	production: true,
 	appId: 'test',
-	url: '',
-	// url: 'https://webart.work',
+	// url: '',
+	url: 'https://webart.work',
 	meta: {
 		title: 'Web Art Work',
 		description:
