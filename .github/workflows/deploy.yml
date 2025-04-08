@@ -22,10 +22,10 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build
+        run: npm run build --base-href /PetSys/
 
-      - name: Copy CNAME file
-        run: cp CNAME dist/app/browser/
+#      - name: Copy CNAME file
+#       run: cp CNAME dist/app/browser/
 
       - name: Set up SSH
         env:
