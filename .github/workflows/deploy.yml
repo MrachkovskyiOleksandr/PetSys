@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build
+        run: ng build --output-path docs --base-href /your_project_name/
 
       - name: Copy CNAME file
         run: cp CNAME dist/app/browser/
