@@ -263,14 +263,14 @@ wform {
 
 .burger::before,
 .burger::after {
-	content: "";
-    width: 80%;
-    height: 4px;
-    display: block;
-    background-color: var(--c-text-primary);
-    transition: all 0.3s;
-    position: absolute;
-    right: 0;
+	content: '';
+	width: 100%;
+	height: 4px;
+	display: block;
+	background-color: var(--c-text-primary);
+	transition: all 0.3s;
+	position: absolute;
+	right: 0;
 }
 
 .burger::before {
@@ -286,7 +286,7 @@ wform {
 .documents {
 	&-wrapper {
 		//overflow-y: scroll;
-		height: 100vh;
+		//height: 100vh;
 		background: var(--c-bg-primary);
 		color: #fff;
 		position: relative;
@@ -311,7 +311,7 @@ wform {
 		margin: 0 auto;
 		height: 100%;
 	}
-	&-header{
+	&-header {
 		display: none;
 	}
 	&-list {
@@ -340,15 +340,15 @@ wform {
 		border-radius: 12px;
 		position: fixed;
 		top: 80px;
-		&__close{
+		&__close {
 			display: none;
 			width: 32px;
 			height: 32px;
 			position: absolute;
 			right: 10px;
 			top: 10px;
-			svg{
-				fill:var(--c-text-primary);
+			svg {
+				fill: var(--c-text-primary);
 			}
 		}
 		&-content {
@@ -357,8 +357,8 @@ wform {
 			overflow-y: scroll;
 			scrollbar-width: none;
 			&::-webkit-scrollbar {
-				width: 0px; /* Для вертикальной полосы прокрутки */
-				height: 0px; /* Для горизонтальной полосы прокрутки */
+				width: 0px;
+				height: 0px;
 			}
 		}
 		&__img {
@@ -470,44 +470,55 @@ wform {
 			background-color: #ba593b;
 		}
 	}
-	&-products{
-		&-list{
+	&-products {
+		&-list {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: center;
 		}
-		&__wrap{
+		&__wrap {
 			flex: 0 0 33.333%;
 			max-width: 33.333%;
 			padding: 0 15px;
 			display: flex;
 			margin-bottom: 30px;
 		}
-		&__item{
+		&__item {
 			display: flex;
 			flex-flow: column wrap;
 			padding: 15px;
 			background-color: var(--doc-products);
 			border-radius: 6px;
 		}
-		&__img{
-			img{
+		&__img {
+			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 			}
 		}
-		&__title{
+		&__title {
 			font-weight: 600;
 			padding: 15px 0 5px 0;
 			color: var(--c-text-primary);
 		}
-		&__description{
+		&__description {
 			color: var(--c-text-primary);
 		}
-		&__btn{
+		&__btn {
 			padding-top: 15px;
 			margin-top: auto;
+		}
+	}
+	&-card {
+		display: flex;
+		flex-direction: row;
+		// justify-content: space-between;
+		img {
+			height: 100px;
+		}
+		&-description {
+			padding-left: 10px;
 		}
 	}
 }
@@ -525,7 +536,7 @@ wform {
 @media screen and (max-width: 991px) {
 	.documents-sidebar {
 		flex: 0 0 100%;
-		max-width: 100%;
+		max-width: calc(100% - 10px);
 		height: 0;
 		border-radius: 12px;
 		position: fixed;
@@ -542,18 +553,18 @@ wform {
 		padding: 15px 30px 15px 15px;
 	}
 	.documents-main {
-		padding: 20px 0 0 ;
+		padding: 20px 0 0;
 	}
-	.documents-header{
-        display: flex;
-        position: fixed;
-        width: 100%;
-        top: 0;
+	.documents-header {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		top: 0;
 		left: 0;
-        padding: 10px;
+		padding: 10px;
 		background: var(--header-doc);
 		z-index: 8;
-		&__title{
+		&__title {
 			position: absolute;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -562,18 +573,18 @@ wform {
 			color: var(--c-text-primary);
 		}
 	}
-	.documents-header-left{
+	.documents-header-left {
 		display: flex;
 		align-items: center;
-		&__arrow{
+		&__arrow {
 			display: flex;
-			span{
+			span {
 				color: var(--c-text-primary);
 			}
 		}
-		&__avatar{
+		&__avatar {
 			margin-left: 20px;
-			img{
+			img {
 				width: 32px;
 				height: 32px;
 				object-fit: cover;
@@ -588,9 +599,9 @@ wform {
 		z-index: 3;
 		right: 3px;
 		transform: translate(-50%, -50%);
-		top: 50%;
+		//top: 50%;
 	}
-	.documents-sidebar__close{
+	.documents-sidebar__close {
 		display: block;
 	}
 	.burger--close {
@@ -603,7 +614,7 @@ wform {
 	}
 
 	.burger--close::after {
-		transform: translateY(3px) rotate(-45deg);
+		transform: translateY(5px) rotate(-45deg);
 	}
 
 	.burger--close::after,
@@ -616,7 +627,7 @@ wform {
 	.documents-main-row {
 		padding: 10px 30px 20px 15px;
 	}
-	.documents-products__wrap{
+	.documents-products__wrap {
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
@@ -637,14 +648,13 @@ wform {
 		flex: 0 0 100%;
 		padding: 20px 0 0 0;
 	}
-
 }
 @media screen and (max-width: 479px) {
 	.documents-triggers__wrap {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-	.documents-products__wrap{
+	.documents-products__wrap {
 		flex: 0 0 100%;
 		max-width: 100%;
 	}

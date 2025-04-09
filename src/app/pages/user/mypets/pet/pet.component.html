@@ -1,10 +1,22 @@
-<a routerLink="/petprofile/{{pet._id}}">
-	<img [src]="apiUrl + pet.thumb" height="60px" alt="Pet photo" />
-	<div class="documents__title">{{pet.name}}</div>
-	<div class="documents__description">{{pet.description}}</div>
-</a>
-<a routerLink="/pethistory/{{pet._id}}" class="nav__burger-link">
-	<span class="material-icons">article</span>
-</a>
-<span (click)="update(pet)" class="material-icons">edit</span>
-<span (click)="delete(pet)" class="material-icons">delete</span>
+<div class="documents-card">
+	<a class="documents" routerLink="/petprofile/{{pet._id}}">
+		<img
+			class="documents__img"
+			[src]="apiUrl + pet.thumb"
+			alt="Pet photo"
+		/>
+	</a>
+	<div class="documents-card-description">
+		<a class="documents" routerLink="/petprofile/{{pet._id}}">
+			<div>
+				<div class="documents__title">{{pet.name}}</div>
+				<div class="documents__description">{{pet.description}}</div>
+			</div>
+			<a routerLink="/pethistory/{{pet._id}}" class="nav__burger-link">
+				<span class="material-icons">article</span>
+			</a>
+		</a>
+		<span (click)="update(pet)" class="material-icons">edit</span>
+		<span (click)="delete(pet)" class="material-icons">delete</span>
+	</div>
+</div>
