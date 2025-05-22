@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Language, TranslateService, Word } from '../../translate.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { FormService } from 'src/app/core/modules/form/form.service';
-import { HttpService } from 'wacom';
+import { AlertService, HttpService } from 'wacom';
 
 interface Translate {
 	translate: string;
 	slug: string;
 	lang: string;
+	word: string;
 }
 
 interface TranslateAll {
@@ -139,7 +140,9 @@ export class TranslatesComponent {
 	constructor(
 		public ts: TranslateService,
 		private _form: FormService,
-		private _http: HttpService
+		private _http: HttpService,
+		private _alert: AlertService,
+		private _translate: TranslateService
 	) {}
 
 	translateAll(missed = false): void {

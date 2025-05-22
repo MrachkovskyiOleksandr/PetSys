@@ -13,9 +13,13 @@
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__title">My Pets</div>
+					<div class="documents-sidebar__title">
+						<span translate>My Pets</span>
+					</div>
 					<div>
-						<wbutton (click)="create()">Create</wbutton>
+						<wbutton (click)="create()"
+							><span translate>Create</span></wbutton
+						>
 					</div>
 					<div>
 						<wselect

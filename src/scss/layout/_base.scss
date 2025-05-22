@@ -513,12 +513,22 @@ wform {
 	&-card {
 		display: flex;
 		flex-direction: row;
-		// justify-content: space-between;
 		img {
 			height: 100px;
 		}
+		a,
+		a:visited {
+			color: #fff;
+		}
+		span:hover {
+			cursor: pointer;
+		}
 		&-description {
 			padding-left: 10px;
+		}
+		&-buttons {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }
