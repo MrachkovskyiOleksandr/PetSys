@@ -97,9 +97,15 @@ export class SignComponent {
 		]
 	});
 
+	// user = {
+	// 	email: 'demo@webart.work',
+	// 	password: '12345',
+	// 	resetPin: null
+	// };
+
 	user = {
-		email: 'demo@webart.work',
-		password: 'asdasdasdasd',
+		email: '',
+		password: '',
 		resetPin: null
 	};
 

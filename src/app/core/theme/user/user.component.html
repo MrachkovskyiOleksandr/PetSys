@@ -92,48 +92,52 @@
 					/>
 					<div class="name">{{us.user.name || "Profile"}}</div>
 				</a>
+
 				<hr />
-				<!-- <div *ngIf="us.role('admin')"> -->
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/pets"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">pets</span>
-					<span translate>Theme.Pets</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/records"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">article</span>
-					<span translate>Theme.Records</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/doctors"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">badge</span>
-					<span translate>Theme.Doctors</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/clinics"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">business</span>
-					<span translate>Theme.Clinics</span>
-				</a>
+
+				<div *ngIf="us.role('admin')">
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/pets"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">pets</span>
+						<span translate>Theme.Pets</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/records"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">article</span>
+						<span translate>Theme.Records</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/doctors"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">badge</span>
+						<span translate>Theme.Doctors</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/clinics"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">business</span>
+						<span translate>Theme.Clinics</span>
+					</a>
+				</div>
+
 				<!-- <a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
@@ -163,7 +167,7 @@
 				>
 					<span class="material-icons">category</span>
 					<span translate>Theme.Items</span>
-				</a> -->
+				</a>
 				<a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
@@ -183,8 +187,8 @@
 				>
 					<span class="material-icons">place</span>
 					<span translate>Theme.Places</span>
-				</a>
-				<!-- <a
+				</a> 
+				<a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
 					routerLink="/store"
@@ -193,7 +197,7 @@
 				>
 					<span class="material-icons">store</span>
 					<span translate>Theme.Store</span>
-				</a> -->
+				</a>
 				<a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
@@ -214,7 +218,7 @@
 					<span class="material-icons">place</span>
 					<span translate>Theme.Places Page</span>
 				</a>
-				<!-- </div> -->
+				</div> -->
 
 				<div *ngIf="us.role('admin')">
 					<hr />
