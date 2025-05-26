@@ -93,40 +93,6 @@
 					<div class="name">{{us.user.name || "Profile"}}</div>
 				</a>
 				<hr />
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/admin/users"
-					class="nav__burger-link"
-					*ngIf="us.role('admin')"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">people</span>
-					<span translate>Theme.Users</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/admin/forms"
-					class="nav__burger-link"
-					*ngIf="us.role('admin')"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">backup_table</span>
-					<span translate>Theme.Forms</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/admin/translates"
-					class="nav__burger-link"
-					*ngIf="us.role('admin')"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">translate</span>
-					<span translate>Theme.Translates</span>
-				</a>
-				<hr *ngIf="us.role('admin')" />
 				<div *ngIf="us.role('admin')">
 					<a
 						[routerLinkActiveOptions]="{ exact: true }"
@@ -238,7 +204,6 @@
 						<span class="material-icons">link</span>
 						<span translate>Theme.Links</span>
 					</a>
-					<hr />
 					<a
 						[routerLinkActiveOptions]="{ exact: true }"
 						routerLinkActive="_activeLink"
@@ -247,7 +212,41 @@
 						(click)="hideSidebar()"
 					>
 						<span class="material-icons">place</span>
-						<span translate>Theme.Places</span>
+						<span translate>Theme.Places Page</span>
+					</a>
+				</div>
+
+				<div *ngIf="us.role('admin')">
+					<hr />
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/admin/users"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">people</span>
+						<span translate>Theme.Users</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/admin/forms"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">backup_table</span>
+						<span translate>Theme.Forms</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/admin/translates"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">translate</span>
+						<span translate>Theme.Translates</span>
 					</a>
 				</div>
 			</div>
