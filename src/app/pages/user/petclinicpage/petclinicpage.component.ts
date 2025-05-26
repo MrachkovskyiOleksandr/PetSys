@@ -6,6 +6,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { petclinicFormComponents } from 'src/app/modules/petclinic/formcomponents/petclinic.formcomponents';
 import { Petclinic } from 'src/app/modules/petclinic/interfaces/petclinic.interface';
 import { PetclinicService } from 'src/app/modules/petclinic/services/petclinic.service';
+import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService, AlertService } from 'wacom';
 
 @Component({
@@ -24,20 +25,25 @@ export class PetclinicpageComponent {
 		private _form: FormService,
 		private _core: CoreService,
 		private _alert: AlertService,
-		private _translate: TranslateService
-	) { }
+		private _translate: TranslateService,
+		public us: UserService
+	) {}
 
-	isMenuOpen = false
+	isMenuOpen = false;
 
-	form: FormInterface = this._form.getForm('petclinic', petclinicFormComponents);
-
+	form: FormInterface = this._form.getForm(
+		'petclinic',
+		petclinicFormComponents
+	);
 
 	update(doc: Petclinic): void {
-		this._form.modal<Petclinic>(this.form, [], doc).then((updated: Petclinic) => {
-			this._core.copy(updated, doc);
+		this._form
+			.modal<Petclinic>(this.form, [], doc)
+			.then((updated: Petclinic) => {
+				this._core.copy(updated, doc);
 
-			this._petclinicService.update(doc);
-		});
+				this._petclinicService.update(doc);
+			});
 	}
 
 	delete(doc: Petclinic): void {
@@ -53,7 +59,7 @@ export class PetclinicpageComponent {
 					text: this._translate.translate('Common.Yes'),
 					callback: (): void => {
 						this._petclinicService.delete(doc);
-						this._router.navigateByUrl('/petclinics')
+						this._router.navigateByUrl('/petclinics');
 					}
 				}
 			]

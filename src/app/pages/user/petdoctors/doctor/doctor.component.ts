@@ -5,6 +5,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { petdoctorFormComponents } from 'src/app/modules/petdoctor/formcomponents/petdoctor.formcomponents';
 import { Petdoctor } from 'src/app/modules/petdoctor/interfaces/petdoctor.interface';
 import { PetdoctorService } from 'src/app/modules/petdoctor/services/petdoctor.service';
+import { UserService } from 'src/app/modules/user/services/user.service';
 import { AlertService, CoreService } from 'wacom';
 
 @Component({
@@ -24,7 +25,8 @@ export class DoctorComponent {
 		private _petdoctorService: PetdoctorService,
 		private _alert: AlertService,
 		private _form: FormService,
-		private _core: CoreService
+		private _core: CoreService,
+		public us: UserService
 	) {}
 
 	form: FormInterface = this._form.getForm(

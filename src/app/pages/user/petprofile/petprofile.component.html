@@ -36,22 +36,28 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
-						<img [src]="petPhoto" height="120px" alt="Pet photo" />
-
+						<img [src]="petPhoto" alt="Pet photo" class="pet-img" />
 						<div class="documents__title">{{petprofile.name}}</div>
 						<div class="documents__species">
-							{{petprofile.species}}
+							<span translate>Pet.Species: </span
+							>{{petprofile.species}}
 						</div>
-						<div class="documents__breed">{{petprofile.breed}}</div>
-						<div class="documents__age">{{petprofile.age}}</div>
+						<div class="documents__breed">
+							<span translate>Pet.Breed: </span
+							>{{petprofile.breed}}
+						</div>
+						<div class="documents__age">
+							<span translate>Pet.Age: </span>{{petprofile.age}}
+						</div>
 						<div class="documents__gender">
-							{{petprofile.gender}}
+							<span translate>Pet.Gender: </span
+							>{{petprofile.gender}}
 						</div>
 						<div class="documents__description">
 							{{petprofile.description}}
 						</div>
 					</div>
-					<h3>Allergies</h3>
+					<h3><span translate>Pet.Allergies</span></h3>
 					<div
 						*ngFor="let petallergy of petprofile.allergies"
 						class="documents-main-row"
@@ -59,15 +65,15 @@
 						<app-allergies [petallergy]="petallergy">
 						</app-allergies>
 					</div>
-					<h3>User</h3>
+					<h3><span translate>Pet.Owner</span></h3>
 					<div class="documents-main-row">
 						<img
 							[src]="apiUrl + user.thumb"
-							height="60px"
 							alt="Owner photo"
+							class="owner-img"
 						/>
 						<div>{{user.name}}</div>
-						<div>{{user.email}}</div>
+						<div>Email: {{user.email}}</div>
 					</div>
 				</div>
 			</div>

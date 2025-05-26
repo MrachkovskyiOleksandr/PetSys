@@ -29,6 +29,24 @@
 				*ngIf="user"
 			></wform>
 
+			<div class="theme-switch">
+				Theme mode:
+				<span
+					class="material-icons"
+					*ngIf="!us.mode"
+					(click)="us.setMode('dark')"
+				>
+					dark_mode
+				</span>
+				<span
+					class="material-icons"
+					*ngIf="us.mode"
+					(click)="us.setMode()"
+				>
+					light_mode
+				</span>
+			</div>
+
 			<div class="profile__footer">
 				<div class="profile__logout">
 					<wbutton (click)="us.logout()" type="danger">

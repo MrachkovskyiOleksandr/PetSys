@@ -1,8 +1,12 @@
-<!-- {{doctor|json}} -->
-<a routerLink="/petdoctorpage/{{doctor._id}}">
-	<div class="documents__title">{{doctor.name}}</div>
-	<div class="documents__description">{{doctor.specialization}}</div>
-</a>
-
-<span (click)="update(doctor)" class="material-icons">edit</span>
-<span (click)="delete(doctor)" class="material-icons">delete</span>
+<div class="documents-card">
+	<div class="documents-card-description">
+		<a routerLink="/petdoctorpage/{{doctor._id}}">
+			<div class="documents__title">{{doctor.name}}</div>
+			<div class="documents__description">{{doctor.specialization}}</div>
+		</a>
+	</div>
+	<div class="documents-card-buttons" *ngIf="us.role('admin')">
+		<span (click)="update(doctor)" class="material-icons">edit</span>
+		<span (click)="delete(doctor)" class="material-icons">delete</span>
+	</div>
+</div>

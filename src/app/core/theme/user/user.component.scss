@@ -62,8 +62,7 @@ hr {
 	width: 100%;
 	box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
 	@include mixins.flexBox(flex, null, space-between, center, null);
-	min-height: 70px;
-	padding-bottom: 20px;
+	min-height: 50px;
 	z-index: 100;
 	overflow: hidden;
 	&__ul {
@@ -74,8 +73,10 @@ hr {
 		transition: all 0.5s ease-in-out;
 		@include mixins.flexBox(flex, null, null, center, null);
 		width: 100%;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 991px) {
 			// justify-content: end !important;
+			min-height: 70px;
+			padding-bottom: 20px;
 		}
 	}
 	&__li {

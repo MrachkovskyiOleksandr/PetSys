@@ -31,18 +31,25 @@
 					<div class="documents-main-row">
 						<div class="documents__title">{{petrecord.name}}</div>
 						<div class="documents__date">
-							{{petrecord._id|mongodate|date:'d MMMM y H:mm'}}
+							<span translate>Record.Data: </span
+							>{{petrecord._id|mongodate|date:'d MMMM y H:mm'}}
 						</div>
 						<div class="documents__disease">
-							{{petrecord.disease}}
+							<span translate>Record.Disease: </span
+							>{{petrecord.disease}}
 						</div>
 						<div class="documents__treatment">
-							{{petrecord.treatment}}
+							<span translate>Record.Treatment: </span
+							>{{petrecord.treatment}}
 						</div>
 						<div class="documents__procedure">
-							{{petrecord.procedure}}
+							<span translate>Record.Procedure: </span
+							>{{petrecord.procedure}}
 						</div>
-						<div class="documents__notes">{{petrecord.notes}}</div>
+						<div class="documents__notes">
+							<span translate>Record.Notes: </span
+							>{{petrecord.notes}}
+						</div>
 					</div>
 				</div>
 			</div>

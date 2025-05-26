@@ -20,7 +20,7 @@
 					<div class="documents-sidebar__title">
 						{{petdoctor.name}}
 					</div>
-					<div>
+					<div *ngIf="us.role('admin')">
 						<wbutton (click)="update(petdoctor)">Edit</wbutton>
 						<wbutton (click)="delete(petdoctor)">Delete</wbutton>
 					</div>
@@ -31,15 +31,24 @@
 					<div class="documents-main-row">
 						<div class="documents__title">{{petdoctor.name}}</div>
 						<div class="documents__specialization">
-							{{petdoctor.specialization}}
+							<span translate>Doctor.Specialization: </span
+							>{{petdoctor.specialization}}
 						</div>
-						<div class="documents__phone">{{petdoctor.phone}}</div>
-						<div class="documents__email">{{petdoctor.email}}</div>
+						<div class="documents__phone">
+							<span translate>Doctor.Phone: </span
+							>{{petdoctor.phone}}
+						</div>
+						<div class="documents__email">
+							<span translate>Doctor.Email: </span
+							>{{petdoctor.email}}
+						</div>
 						<div class="documents__workingHours">
-							{{petdoctor.workingHours}}
+							<span translate>Doctor.Working hours: </span
+							>{{petdoctor.workingHours}}
 						</div>
 						<div class="documents__description">
-							{{petdoctor.description}}
+							<span translate>Doctor.Description: </span
+							>{{petdoctor.description}}
 						</div>
 					</div>
 				</div>

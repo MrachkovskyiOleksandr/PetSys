@@ -1,37 +1,58 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
-    <div class="documents-container">
-        <div class="documents-list">
-            <div class="burger-wrap" class="burger-wrap" (click)="isMenuOpen=!isMenuOpen"
-                [class.burger-wrap--open]="isMenuOpen">
-                <div class="burger" [class.burger--close]="isMenuOpen"></div>
-            </div>
-            <div class="documents-sidebar" [class.documents-sidebar--open]="isMenuOpen">
-                <div class="documents-sidebar-content">
-                    <div class="documents-sidebar__img">
-                        <img src="assets/default.png" alt="" />
-                    </div>
-                    <div class="documents-sidebar__title">
-                        {{petclinic.name}}
-                    </div>
-                    <div>
-                        <wbutton (click)="update(petclinic)">Edit</wbutton>
-                        <wbutton (click)="delete(petclinic)">Delete</wbutton>
-                    </div>
-
-                </div>
-            </div>
-            <div class="documents-main">
-                <div class="documents-main-content">
-                    <div class="documents-main-row">
-                        <div class="documents__title">{{petclinic.name}}</div>
-                        <div class="documents__address">{{petclinic.address}}</div>
-                        <div class="documents__phone">{{petclinic.phone}}</div>
-                        <div class="documents__email">{{petclinic.email}}</div>
-                        <div class="documents__workingHours">{{petclinic.workingHours}}</div>
-                        <div class="documents__description">{{petclinic.description}}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="documents-container">
+		<div class="documents-list">
+			<div
+				class="burger-wrap"
+				class="burger-wrap"
+				(click)="isMenuOpen=!isMenuOpen"
+				[class.burger-wrap--open]="isMenuOpen"
+			>
+				<div class="burger" [class.burger--close]="isMenuOpen"></div>
+			</div>
+			<div
+				class="documents-sidebar"
+				[class.documents-sidebar--open]="isMenuOpen"
+			>
+				<div class="documents-sidebar-content">
+					<div class="documents-sidebar__img">
+						<img src="assets/default.png" alt="" />
+					</div>
+					<div class="documents-sidebar__title">
+						{{petclinic.name}}
+					</div>
+					<div *ngIf="us.role('admin')">
+						<wbutton (click)="update(petclinic)">Edit</wbutton>
+						<wbutton (click)="delete(petclinic)">Delete</wbutton>
+					</div>
+				</div>
+			</div>
+			<div class="documents-main">
+				<div class="documents-main-content">
+					<div class="documents-main-row">
+						<div class="documents__title">{{petclinic.name}}</div>
+						<div class="documents__address">
+							<span translate>Clinic.Address: </span
+							>{{petclinic.address}}
+						</div>
+						<div class="documents__phone">
+							<span translate>Clinic.Phone: </span
+							>{{petclinic.phone}}
+						</div>
+						<div class="documents__email">
+							<span translate>Clinic.Email: </span
+							>{{petclinic.email}}
+						</div>
+						<div class="documents__workingHours">
+							<span translate>Clinic.Working hours: </span
+							>{{petclinic.workingHours}}
+						</div>
+						<div class="documents__description">
+							<span translate>Clinic.Description: </span
+							>{{petclinic.description}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

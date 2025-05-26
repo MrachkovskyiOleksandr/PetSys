@@ -51,10 +51,26 @@
 					<span class="material-icons">pets</span>
 				</a>
 			</li>
-
-			<li class="nav__li _burger" (click)="showSidebar = !showSidebar">
+			<li
+				class="nav__li _burger"
+				(click)="showSidebar = !showSidebar"
+				*ngIf="us.role('admin')"
+			>
 				<a class="nav__toggle" [class._active]="showSidebar">
 					<span class="nav__toggle-line"></span>
+				</a>
+			</li>
+			<li class="nav__li">
+				<a class="nav__burger-link nav__burger-user">
+					<img
+						routerLink="/profile"
+						[src]="forceAvatarUrl || us.user.thumb ? url + us.user.thumb : 'assets/default.png'"
+						(error)="forceAvatarUrl = 'assets/default.png'"
+						alt="Profile Picture"
+						class="avatar__img"
+						height="30"
+						width="30"
+					/>
 				</a>
 			</li>
 		</ul>
@@ -62,9 +78,12 @@
 
 	<div class="main" [class.showTable]="showSidebar">
 		<div class="fade" [@showInOut]="showSidebar" *ngIf="showSidebar"></div>
-		<div class="nav__burger _active" [class._active]="showSidebar">
+		<div
+			class="nav__burger _active"
+			[class._active]="us.role('admin') ? showSidebar : !showSidebar"
+		>
 			<div class="nav__burger-list">
-				<div class="theme-switch">
+				<!-- <div class="theme-switch">
 					<span
 						class="material-icons"
 						*ngIf="!us.mode"
@@ -79,7 +98,7 @@
 					>
 						light_mode
 					</span>
-				</div>
+				</div> -->
 				<a class="nav__burger-link nav__burger-user">
 					<img
 						routerLink="/profile"

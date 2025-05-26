@@ -6,6 +6,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { petdoctorFormComponents } from 'src/app/modules/petdoctor/formcomponents/petdoctor.formcomponents';
 import { Petdoctor } from 'src/app/modules/petdoctor/interfaces/petdoctor.interface';
 import { PetdoctorService } from 'src/app/modules/petdoctor/services/petdoctor.service';
+import { UserService } from 'src/app/modules/user/services/user.service';
 import { CoreService, AlertService } from 'wacom';
 
 @Component({
@@ -24,7 +25,8 @@ export class PetdoctorpageComponent {
 		private _form: FormService,
 		private _core: CoreService,
 		private _alert: AlertService,
-		private _translate: TranslateService
+		private _translate: TranslateService,
+		public us: UserService
 	) {}
 
 	isMenuOpen = false;

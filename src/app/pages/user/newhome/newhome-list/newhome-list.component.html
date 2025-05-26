@@ -1,5 +1,15 @@
-<a routerLink="/petprofile/{{pet._id}}">
-	<img [src]="apiUrl + pet.thumb" height="60px" alt="Pet photo" />
-	<div class="documents__title">{{pet.name}}</div>
-	<div class="documents__description">{{pet.description}}</div>
-</a>
+<div class="documents-card">
+	<a routerLink="/petprofile/{{pet._id}}">
+		<img
+			class="documents__img"
+			[src]="apiUrl + pet.thumb"
+			alt="Pet photo"
+		/>
+	</a>
+	<div class="documents-card-description">
+		<a routerLink="/petprofile/{{pet._id}}">
+			<div class="documents__title">{{pet.name}}</div>
+			<div class="documents__description">{{pet.description}}</div>
+		</a>
+	</div>
+</div>
