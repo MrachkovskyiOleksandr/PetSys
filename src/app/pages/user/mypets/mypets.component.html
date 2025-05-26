@@ -24,14 +24,14 @@
 					<div>
 						<wselect
 							[placeholder]="'Species'"
-							[items]="['Cat','Dog']"
+							[items]="speciesList"
 							[clearable]="true"
 							(modelChange)="species=$event; load()"
 							[searchable]="true"
 						></wselect>
 						<wselect
 							[placeholder]="'Breed'"
-							[items]="['White','Black']"
+							[items]="breedList"
 							[clearable]="true"
 							(modelChange)="breed=$event; load()"
 							[searchable]="true"

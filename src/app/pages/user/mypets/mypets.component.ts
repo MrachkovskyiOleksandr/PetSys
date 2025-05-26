@@ -16,8 +16,8 @@ import { CoreService } from 'wacom';
 })
 export class MypetsComponent {
 	mypets: Pet[] = [];
-
-	apiUrl = environment.url;
+	speciesList: { _id: string; name: string }[] = [];
+	breedList: { _id: string; name: string }[] = [];
 
 	constructor(
 		private _petService: PetService,
@@ -28,6 +28,20 @@ export class MypetsComponent {
 		this._core.onComplete('pet_loaded').then(() => {
 			this.mypets =
 				this._petService.petsByAuthor[this._userService.user._id];
+
+			this.speciesList = [
+				...new Set(this.mypets.map((pet) => pet.species))
+			].map((species) => ({
+				_id: species,
+				name: species
+			}));
+
+			this.breedList = [
+				...new Set(this.mypets.map((pet) => pet.breed))
+			].map((breed) => ({
+				_id: breed,
+				name: breed
+			}));
 		});
 	}
 
