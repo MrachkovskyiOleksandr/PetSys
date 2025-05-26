@@ -15,7 +15,7 @@
 			>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Pet Doctors</div>
-					<div>
+					<div *ngIf="us.role('admin')">
 						<wbutton (click)="create()">Create</wbutton>
 					</div>
 					<div>

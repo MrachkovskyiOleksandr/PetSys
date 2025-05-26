@@ -7,6 +7,7 @@ import { Petclinic } from 'src/app/modules/petclinic/interfaces/petclinic.interf
 import { PetclinicService } from 'src/app/modules/petclinic/services/petclinic.service';
 import { Petdrug } from 'src/app/modules/petdrug/interfaces/petdrug.interface';
 import { PetdrugService } from 'src/app/modules/petdrug/services/petdrug.service';
+import { UserService } from 'src/app/modules/user/services/user.service';
 
 @Component({
 	templateUrl: './petclinics.component.html',
@@ -25,7 +26,8 @@ export class PetclinicsComponent {
 	constructor(
 		private _petclinicService: PetclinicService,
 		private _petdrugService: PetdrugService,
-		private _form: FormService
+		private _form: FormService,
+		public us: UserService
 	) {
 		this.load();
 

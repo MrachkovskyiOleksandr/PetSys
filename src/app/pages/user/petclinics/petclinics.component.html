@@ -23,15 +23,15 @@
 			>
 				<div class="documents-sidebar-content">
 					<div class="documents-sidebar__title">Pet Clinics</div>
-					<div>
-						<wbutton (click)="create()">Create</wbutton>
+					<div *ngIf="us.role('admin')">
+						<wbutton (click)="create() ">Create</wbutton>
 					</div>
 
 					<div>
-						<petdrug-selector
+						<!-- <petdrug-selector
 							[value]="clinic_drug"
 							(wChange)="clinic_drug = $event; load()"
-						></petdrug-selector>
+						></petdrug-selector> -->
 						<winput
 							[type]="'search'"
 							[clearable]="true"

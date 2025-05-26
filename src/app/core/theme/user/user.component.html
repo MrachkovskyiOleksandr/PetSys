@@ -127,48 +127,48 @@
 					<span translate>Theme.Translates</span>
 				</a>
 				<hr *ngIf="us.role('admin')" />
-
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/pets"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">pets</span>
-					<span translate>Theme.Pets</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/records"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">article</span>
-					<span translate>Theme.Records</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/doctors"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">badge</span>
-					<span translate>Theme.Doctors</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/clinics"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">business</span>
-					<span translate>Theme.Clinics</span>
-				</a>
-				<!-- <a
+				<div *ngIf="us.role('admin')">
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/pets"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">pets</span>
+						<span translate>Theme.Pets</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/records"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">article</span>
+						<span translate>Theme.Records</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/doctors"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">badge</span>
+						<span translate>Theme.Doctors</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/clinics"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">business</span>
+						<span translate>Theme.Clinics</span>
+					</a>
+					<!-- <a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
 					routerLink="/drugs"
@@ -198,27 +198,27 @@
 					<span class="material-icons">category</span>
 					<span translate>Theme.Items</span>
 				</a> -->
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/allergies"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">report_problem</span>
-					<span translate>Theme.Allergies</span>
-				</a>
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/places"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">place</span>
-					<span translate>Theme.Places</span>
-				</a>
-				<!-- <a
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/allergies"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">report_problem</span>
+						<span translate>Theme.Allergies</span>
+					</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/places"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">place</span>
+						<span translate>Theme.Places</span>
+					</a>
+					<!-- <a
 					[routerLinkActiveOptions]="{ exact: true }"
 					routerLinkActive="_activeLink"
 					routerLink="/store"
@@ -228,27 +228,28 @@
 					<span class="material-icons">store</span>
 					<span translate>Theme.Store</span>
 				</a> -->
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/links"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">link</span>
-					<span translate>Theme.Links</span>
-				</a>
-				<hr />
-				<a
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLinkActive="_activeLink"
-					routerLink="/petplaces"
-					class="nav__burger-link"
-					(click)="hideSidebar()"
-				>
-					<span class="material-icons">place</span>
-					<span translate>Theme.Places</span>
-				</a>
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/links"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">link</span>
+						<span translate>Theme.Links</span>
+					</a>
+					<hr />
+					<a
+						[routerLinkActiveOptions]="{ exact: true }"
+						routerLinkActive="_activeLink"
+						routerLink="/petplaces"
+						class="nav__burger-link"
+						(click)="hideSidebar()"
+					>
+						<span class="material-icons">place</span>
+						<span translate>Theme.Places</span>
+					</a>
+				</div>
 			</div>
 		</div>
 		<router-outlet></router-outlet>
