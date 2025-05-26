@@ -10,6 +10,8 @@ import { PetService } from 'src/app/modules/pet/services/pet.service';
 })
 export class NewhomeComponent {
 	availablePets: Pet[] = [];
+	speciesList: { _id: string; name: string }[] = [];
+	breedList: { _id: string; name: string }[] = [];
 
 	species = '';
 	breed = '';
@@ -17,6 +19,7 @@ export class NewhomeComponent {
 	search = '';
 
 	isMenuOpen = false;
+	filtersInitialized = false;
 
 	constructor(private _petService: PetService) {
 		this.load();
@@ -32,6 +35,24 @@ export class NewhomeComponent {
 			.subscribe((availablePets) => {
 				this.availablePets.splice(0, this.availablePets.length);
 				this.availablePets.push(...availablePets);
+
+				if (!this.filtersInitialized) {
+					this.speciesList = [
+						...new Set(this.availablePets.map((pet) => pet.species))
+					].map((species) => ({
+						_id: species,
+						name: species
+					}));
+
+					this.breedList = [
+						...new Set(this.availablePets.map((pet) => pet.breed))
+					].map((breed) => ({
+						_id: breed,
+						name: breed
+					}));
+
+					this.filtersInitialized = true;
+				}
 			});
 	}
 
