@@ -80,7 +80,8 @@
 		<div class="fade" [@showInOut]="showSidebar" *ngIf="showSidebar"></div>
 		<div
 			class="nav__burger _active"
-			[class._active]="us.role('admin') ? showSidebar : !showSidebar"
+			[class._active]="showSidebar"
+			*ngIf="us.role('admin')"
 		>
 			<div class="nav__burger-list">
 				<!-- <div class="theme-switch">

@@ -43,3 +43,4 @@ dist
 .angular
 .vscode
 .husky
+src/environments/environment.prod.ts
