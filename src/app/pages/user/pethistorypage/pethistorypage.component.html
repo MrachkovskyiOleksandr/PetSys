@@ -21,8 +21,12 @@
 						{{petrecord.name}}
 					</div>
 					<div>
-						<wbutton (click)="update(petrecord)">Edit</wbutton>
-						<wbutton (click)="delete(petrecord)">Delete</wbutton>
+						<wbutton (click)="update(petrecord)"
+							><span translate>Button.Edit</span></wbutton
+						>
+						<wbutton (click)="delete(petrecord)"
+							><span translate>Button.Delete</span></wbutton
+						>
 					</div>
 				</div>
 			</div>

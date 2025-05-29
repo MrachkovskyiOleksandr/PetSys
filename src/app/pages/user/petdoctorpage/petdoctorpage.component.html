@@ -21,8 +21,12 @@
 						{{petdoctor.name}}
 					</div>
 					<div *ngIf="us.role('admin')">
-						<wbutton (click)="update(petdoctor)">Edit</wbutton>
-						<wbutton (click)="delete(petdoctor)">Delete</wbutton>
+						<wbutton (click)="update(petdoctor)"
+							><span translate>Button.Edit</span></wbutton
+						>
+						<wbutton (click)="delete(petdoctor)"
+							><span translate>Button.Delete</span></wbutton
+						>
 					</div>
 				</div>
 			</div>

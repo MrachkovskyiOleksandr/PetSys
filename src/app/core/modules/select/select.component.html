@@ -110,7 +110,7 @@
 						<input
 							class="w-forms__input"
 							type="search"
-							placeholder="Search"
+							[placeholder]="placeholderSearch || 'Search'"
 							[(ngModel)]="search"
 							#e_search
 						/>

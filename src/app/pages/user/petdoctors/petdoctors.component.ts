@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { Value } from 'src/app/core/modules/input/input.component';
+import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { Petclinic } from 'src/app/modules/petclinic/interfaces/petclinic.interface';
 import { PetclinicService } from 'src/app/modules/petclinic/services/petclinic.service';
 import { petdoctorFormComponents } from 'src/app/modules/petdoctor/formcomponents/petdoctor.formcomponents';
@@ -28,7 +29,8 @@ export class PetdoctorsComponent {
 		private _petdoctorService: PetdoctorService,
 		private _form: FormService,
 		public us: UserService,
-		private _petclinicService: PetclinicService
+		private _petclinicService: PetclinicService,
+		private translateService: TranslateService
 	) {
 		this.load();
 		this.selectorsLoad();
@@ -41,6 +43,10 @@ export class PetdoctorsComponent {
 
 	setSearch(value: Value): void {
 		this.search = (value as string) || '';
+	}
+
+	getTranslatedText(toTranslate: string) {
+		return this.translateService.translate(toTranslate);
 	}
 
 	create(): void {

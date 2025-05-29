@@ -36,7 +36,7 @@ export const petFormComponents = {
 			]
 		},
 		{
-			name: 'Select',
+			name: 'Text',
 			key: 'breed',
 			fields: [
 				{
@@ -46,10 +46,6 @@ export const petFormComponents = {
 				{
 					name: 'Label',
 					value: 'Breed'
-				},
-				{
-					name: 'Items',
-					value: ['White', 'Black']
 				}
 			]
 		},

@@ -331,11 +331,11 @@ wform {
 			border-radius: 10px;
 
 			.pet-img {
-				height: 15vh;
+				height: 150px;
 				border-radius: 10px;
 			}
 			.owner-img {
-				height: 8vh;
+				height: 75px;
 			}
 		}
 	}
@@ -460,7 +460,7 @@ wform {
 		}
 	}
 	&__title {
-		font-size: 3vh;
+		font-size: 2em;
 		font-weight: 600;
 		padding-bottom: 10px;
 		color: var(--c-text-primary);
@@ -528,7 +528,7 @@ wform {
 		display: flex;
 		flex-direction: row;
 		img {
-			height: 15vh;
+			height: 140px;
 			border-radius: 10px;
 			flex: 4;
 		}
@@ -551,7 +551,7 @@ wform {
 			flex: 0;
 
 			span {
-				font-size: 4vh;
+				font-size: 2.5em;
 			}
 		}
 	}

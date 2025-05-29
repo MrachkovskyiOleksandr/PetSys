@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-	appId: 'wpet.webart.work',
-	appName: 'wPet',
+	appId: 'mrachkovskyioleksandr.github.io',
+	appName: 'PetSys',
 	webDir: 'dist/app/browser'
 };
 

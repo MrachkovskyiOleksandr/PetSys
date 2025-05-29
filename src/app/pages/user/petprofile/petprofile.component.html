@@ -18,9 +18,11 @@
 						*ngIf="this.petprofile.author === _userService.user._id"
 					>
 						<div>
-							<wbutton (click)="update(petprofile)">Edit</wbutton>
+							<wbutton (click)="update(petprofile)"
+								><span translate>Button.Edit</span></wbutton
+							>
 							<wbutton (click)="delete(petprofile)"
-								>Delete</wbutton
+								><span translate>Button.Delete</span></wbutton
 							>
 						</div>
 						<div>
@@ -40,18 +42,18 @@
 						<div class="documents__title">{{petprofile.name}}</div>
 						<div class="documents__species">
 							<span translate>Pet.Species: </span
-							>{{petprofile.species}}
+							>{{getTranslatedText('Pet.' + petprofile.species)}}
 						</div>
 						<div class="documents__breed">
 							<span translate>Pet.Breed: </span
-							>{{petprofile.breed}}
+							>{{getTranslatedText('Pet.' + petprofile.breed)}}
 						</div>
 						<div class="documents__age">
 							<span translate>Pet.Age: </span>{{petprofile.age}}
 						</div>
 						<div class="documents__gender">
 							<span translate>Pet.Gender: </span
-							>{{petprofile.gender}}
+							>{{getTranslatedText('Pet.' + petprofile.gender)}}
 						</div>
 						<div class="documents__description">
 							{{petprofile.description}}
@@ -73,7 +75,9 @@
 							class="owner-img"
 						/>
 						<div>{{user.name}}</div>
-						<div>Email: {{user.email}}</div>
+						<div>
+							<span translate>Profile.Email:</span> {{user.email}}
+						</div>
 					</div>
 				</div>
 			</div>

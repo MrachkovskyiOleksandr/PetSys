@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormService } from 'src/app/core/modules/form/form.service';
 import { FormInterface } from 'src/app/core/modules/form/interfaces/form.interface';
 import { Value } from 'src/app/core/modules/input/input.component';
+import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { petFormComponents } from 'src/app/modules/pet/formcomponents/pet.formcomponents';
 import { Pet } from 'src/app/modules/pet/interfaces/pet.interface';
 import { PetService } from 'src/app/modules/pet/services/pet.service';
@@ -23,7 +24,8 @@ export class MypetsComponent {
 		private _petService: PetService,
 		private _form: FormService,
 		public _userService: UserService,
-		private _core: CoreService
+		private _core: CoreService,
+		private translateService: TranslateService
 	) {
 		this._core.onComplete('pet_loaded').then(() => {
 			this.mypets =
@@ -33,14 +35,14 @@ export class MypetsComponent {
 				...new Set(this.mypets.map((pet) => pet.species))
 			].map((species) => ({
 				_id: species,
-				name: species
+				name: this.getTranslatedText('Pet.' + species)
 			}));
 
 			this.breedList = [
 				...new Set(this.mypets.map((pet) => pet.breed))
 			].map((breed) => ({
 				_id: breed,
-				name: breed
+				name: this.getTranslatedText('Pet.' + breed)
 			}));
 		});
 	}
@@ -54,10 +56,30 @@ export class MypetsComponent {
 
 	search = '';
 
+	genderList = [
+		{ _id: 'Male', name: this.getTranslatedText('Pet.Male') },
+		{
+			_id: 'Female',
+			name: this.getTranslatedText('Pet.Female')
+		}
+	];
+
+	adoptableList = [
+		{ _id: 'Adoptable', name: this.getTranslatedText('Pet.Is adoptable') },
+		{
+			_id: 'Not adoptable',
+			name: this.getTranslatedText('Pet.Not adoptable')
+		}
+	];
+
 	form: FormInterface = this._form.getForm('pet', petFormComponents);
 
 	setSearch(value: Value): void {
 		this.search = (value as string) || '';
+	}
+
+	getTranslatedText(toTranslate: string) {
+		return this.translateService.translate(toTranslate);
 	}
 
 	create(): void {

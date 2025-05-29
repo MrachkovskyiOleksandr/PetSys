@@ -18,6 +18,7 @@ import { Petclinic } from '../../interfaces/petclinic.interface';
 })
 export class SelectUserComponent implements OnChanges {
 	@Input() value: string;
+	@Input() placeholder: string;
 
 	@Output() wChange = new EventEmitter();
 

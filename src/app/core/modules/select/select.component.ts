@@ -26,6 +26,8 @@ export class SelectComponent implements OnInit, OnChanges {
 	/** Placeholder text for the select input. */
 	@Input() placeholder = '';
 
+	@Input() placeholderSearch = '';
+
 	/** List of items to display in the dropdown. */
 	@Input() items: any = [];
 

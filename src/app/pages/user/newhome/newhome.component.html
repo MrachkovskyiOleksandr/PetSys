@@ -14,31 +14,34 @@
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__title">New Home</div>
+					<div class="documents-sidebar__title">
+						<span translate>NewHome.New Home</span>
+					</div>
 					<div>
 						<wselect
-							[placeholder]="'Species'"
+							[placeholder]="getTranslatedText('Pet.Species')"
 							[items]="speciesList"
 							[clearable]="true"
 							(modelChange)="species=$event; load()"
 							[searchable]="true"
 						></wselect>
 						<wselect
-							[placeholder]="'Breed'"
+							[placeholder]="getTranslatedText('Pet.Breed')"
 							[items]="breedList"
 							[clearable]="true"
 							(modelChange)="breed=$event; load()"
 							[searchable]="true"
 						></wselect>
 						<wselect
-							[placeholder]="'Gender'"
-							[items]="['Male','Female']"
+							[placeholder]="getTranslatedText('Pet.Gender')"
+							[items]="genderList"
 							[clearable]="true"
 							(modelChange)="gender=$event; load()"
 						></wselect>
 					</div>
 					<div>
 						<winput
+							[placeholder]="getTranslatedText('Common.Enter text...')"
 							[type]="'search'"
 							(wChange)="setSearch($event)"
 							(wSubmit)="load()"

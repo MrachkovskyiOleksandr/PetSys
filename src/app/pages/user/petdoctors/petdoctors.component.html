@@ -14,16 +14,22 @@
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__title">Pet Doctors</div>
+					<div class="documents-sidebar__title">
+						<span translate>Doctor.Pet Doctors</span>
+					</div>
 					<div *ngIf="us.role('admin')">
-						<wbutton (click)="create()">Create</wbutton>
+						<wbutton (click)="create()"
+							><span translate>Button.Create</span></wbutton
+						>
 					</div>
 					<div>
 						<petclinic-selector
+							[placeholder]="getTranslatedText('Clinic.Select petclinic')"
 							[value]="clinic_id"
 							(wChange)="clinic_id = $event; load()"
 						></petclinic-selector>
 						<winput
+							[placeholder]="getTranslatedText('Common.Enter text...')"
 							[type]="'search'"
 							[clearable]="true"
 							(wChange)="setSearch($event)"

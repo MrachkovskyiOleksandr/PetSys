@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Value } from 'src/app/core/modules/input/input.component';
+import { TranslateService } from 'src/app/core/modules/translate/translate.service';
 import { Pet } from 'src/app/modules/pet/interfaces/pet.interface';
 import { PetService } from 'src/app/modules/pet/services/pet.service';
 
@@ -18,15 +19,30 @@ export class NewhomeComponent {
 	gender = '';
 	search = '';
 
+	genderList = [
+		{ _id: 'Male', name: this.getTranslatedText('Pet.Male') },
+		{
+			_id: 'Female',
+			name: this.getTranslatedText('Pet.Female')
+		}
+	];
+
 	isMenuOpen = false;
 	filtersInitialized = false;
 
-	constructor(private _petService: PetService) {
+	constructor(
+		private _petService: PetService,
+		private translateService: TranslateService
+	) {
 		this.load();
 	}
 
 	setSearch(value: Value): void {
 		this.search = (value as string) || '';
+	}
+
+	getTranslatedText(toTranslate: string) {
+		return this.translateService.translate(toTranslate);
 	}
 
 	load(): void {
@@ -41,14 +57,14 @@ export class NewhomeComponent {
 						...new Set(this.availablePets.map((pet) => pet.species))
 					].map((species) => ({
 						_id: species,
-						name: species
+						name: this.getTranslatedText('Pet.' + species)
 					}));
 
 					this.breedList = [
 						...new Set(this.availablePets.map((pet) => pet.breed))
 					].map((breed) => ({
 						_id: breed,
-						name: breed
+						name: this.getTranslatedText('Pet.' + breed)
 					}));
 
 					this.filtersInitialized = true;

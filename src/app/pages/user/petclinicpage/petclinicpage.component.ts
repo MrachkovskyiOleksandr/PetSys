@@ -26,10 +26,15 @@ export class PetclinicpageComponent {
 		private _core: CoreService,
 		private _alert: AlertService,
 		private _translate: TranslateService,
-		public us: UserService
+		public us: UserService,
+		private translateService: TranslateService
 	) {}
 
 	isMenuOpen = false;
+
+	getTranslatedText(toTranslate: string) {
+		return this.translateService.translate(toTranslate);
+	}
 
 	form: FormInterface = this._form.getForm(
 		'petclinic',
