@@ -17,6 +17,14 @@
 	padding: unset;
 }
 
+.theme-switch {
+	&-icon {
+		span {
+			font-size: 100px;
+		}
+	}
+}
+
 .profile {
 	&__header {
 		z-index: 9;
@@ -26,6 +34,12 @@
 		@include mixins.text-default(0, 23px, 500, 20px, var(--c-text-primary));
 		@include mixins.flexBox(flex, null, space-between, center, null);
 		border-radius: 12px;
+	}
+
+	&__language {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	&__footer {
@@ -51,6 +65,36 @@
 
 		.material-icons {
 			margin-right: 10px;
+		}
+	}
+
+	&-settings {
+		display: flex;
+		flex-direction: column;
+		h1 {
+			display: inline-block;
+			color: var(--c-text-primary);
+			font-size: 19px;
+			line-height: calc(16px + 2px);
+			letter-spacing: 0.3px;
+			font-weight: 500;
+			margin-bottom: 15px;
+		}
+		span {
+			font-weight: 500;
+			font-size: 20px;
+			color: var(--c-text-primary);
+			margin-left: 5px;
+		}
+
+		.theme-switch {
+			&-icon {
+				margin-bottom: 10px;
+				span {
+					margin: 0;
+					font-size: 50px;
+				}
+			}
 		}
 	}
 }
@@ -101,4 +145,11 @@
 
 .profile__password {
 	cursor: pointer;
+
+	span {
+		font-weight: 500;
+		font-size: 20px;
+		color: var(--c-text-primary);
+		margin-left: 5px;
+	}
 }

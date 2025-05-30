@@ -62,7 +62,7 @@ export class TranslatesComponent {
 					},
 					{
 						name: 'Label',
-						value: 'Translate'
+						value: 'Original Words'
 					},
 					{
 						name: 'Textarea',
@@ -81,7 +81,7 @@ export class TranslatesComponent {
 					},
 					{
 						name: 'Label',
-						value: 'Translate'
+						value: 'Translated Words'
 					},
 					{
 						name: 'Textarea',

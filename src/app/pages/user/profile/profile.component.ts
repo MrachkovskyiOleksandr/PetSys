@@ -5,6 +5,10 @@ import { FormService } from 'src/app/core/modules/form/form.service';
 import { environment } from 'src/environments/environment';
 import { Component } from '@angular/core';
 import { CoreService } from 'wacom';
+import {
+	TranslateService,
+	Language
+} from 'src/app/core/modules/translate/translate.service';
 
 interface ChangePassword {
 	oldPass: string;
@@ -23,7 +27,8 @@ export class ProfileComponent {
 	constructor(
 		private _form: FormService,
 		private _core: CoreService,
-		public us: UserService
+		public us: UserService,
+		public ts: TranslateService
 	) {
 		this._core.onComplete('us.user').then(() => {
 			const user = {};
@@ -155,5 +160,11 @@ export class ProfileComponent {
 		this.us.user.thumb = Array.isArray(thumb) ? thumb[0] : thumb;
 
 		this.us.updateMe();
+	}
+
+	set_language(code: string) {
+		this.ts.set_language(
+			this.ts.languages.find((l) => l.code === code) as Language
+		);
 	}
 }

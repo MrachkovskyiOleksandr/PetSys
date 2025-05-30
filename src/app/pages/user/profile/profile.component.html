@@ -29,24 +29,6 @@
 				*ngIf="user"
 			></wform>
 
-			<div class="theme-switch">
-				<span translate>Profile.Theme mode:</span>
-				<span
-					class="material-icons"
-					*ngIf="!us.mode"
-					(click)="us.setMode('dark')"
-				>
-					dark_mode
-				</span>
-				<span
-					class="material-icons"
-					*ngIf="us.mode"
-					(click)="us.setMode()"
-				>
-					light_mode
-				</span>
-			</div>
-
 			<div class="profile__footer">
 				<div class="profile__logout">
 					<wbutton (click)="us.logout()" type="danger">
@@ -56,9 +38,44 @@
 				</div>
 
 				<div class="profile__password">
-					<wbutton (click)="changePassword()" type="link" translate>
-						Profile.Change Password
+					<wbutton (click)="changePassword()" type="link">
+						<span translate>Profile.Change Password</span>
 					</wbutton>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="profile-settings">
+				<h1 translate>Profile.Interface Settings</h1>
+				<div class="theme-switch">
+					<span translate>Profile.Theme mode:</span>
+					<div class="theme-switch-icon">
+						<span
+							class="material-icons"
+							*ngIf="!us.mode"
+							(click)="us.setMode('dark')"
+						>
+							dark_mode
+						</span>
+						<span
+							class="material-icons"
+							*ngIf="us.mode"
+							(click)="us.setMode()"
+						>
+							light_mode
+						</span>
+					</div>
+				</div>
+
+				<div class="profile__language">
+					<span translate>Profile.Change language</span>
+					<wselect
+						value="code"
+						[items]="ts.languages"
+						[select]="ts.language.code"
+						(modelChange)="set_language($event)"
+					></wselect>
 				</div>
 			</div>
 		</div>
