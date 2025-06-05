@@ -13,7 +13,7 @@
 	transition: all 0.5s ease-in-out;
 	.main {
 		flex-grow: 1;
-		overflow-y: auto;
+		overflow-y: scroll;
 		@include mixins.flexBox(flex, column, null, null, null);
 		position: relative;
 		// display: flex;
@@ -45,7 +45,7 @@
 		// }
 	}
 	@media screen and (max-width: 991px) {
-		padding-top: 30px;
+		padding-top: 30px; //TODO Top padding for wrapper ANDROID
 	}
 }
 
@@ -77,11 +77,14 @@ hr {
 		transition: all 0.5s ease-in-out;
 		@include mixins.flexBox(flex, null, null, center, null);
 		width: 100%;
-		@media screen and (max-width: 991px) {
-			// justify-content: end !important;
-			min-height: 70px;
-			padding-bottom: 20px;
-		}
+	}
+	@media screen and (max-width: 991px) {
+		min-height: 70px;
+
+		// bottom: 0;
+		// position: fixed;
+
+		padding-bottom: 20px; //TODO Bottom padding for navbar ANDROID
 	}
 	&__li {
 		display: inline-block;
@@ -94,6 +97,14 @@ hr {
 		}
 		&:not(:last-child) {
 			margin-right: 10px;
+		}
+	}
+	@media screen and (max-width: 991px) {
+		&__li {
+			width: 44px;
+			&:not(:last-child) {
+				margin-right: 0px;
+			}
 		}
 	}
 	&__a {

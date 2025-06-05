@@ -61,15 +61,18 @@
 				</a>
 			</li>
 			<li class="nav__li">
-				<a class="nav__burger-link nav__burger-user">
+				<a
+					class="nav__burger-link nav__burger-user nav__a"
+					routerLinkActive="_activeLink"
+				>
 					<img
 						routerLink="/profile"
 						[src]="forceAvatarUrl || us.user.thumb ? url + us.user.thumb : 'assets/default.png'"
 						(error)="forceAvatarUrl = 'assets/default.png'"
 						alt="Profile Picture"
 						class="avatar__img"
-						height="30"
-						width="30"
+						height="28"
+						width="28"
 					/>
 				</a>
 			</li>
