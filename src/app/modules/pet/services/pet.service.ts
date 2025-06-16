@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pet } from '../interfaces/pet.interface';
 import { CrudService } from 'wacom';
+import { UserService } from '../../user/services/user.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,12 +11,12 @@ export class PetService extends CrudService<Pet> {
 
 	petsByAuthor: Record<string, Pet[]> = {};
 
-	constructor() {
+	constructor(private _userService: UserService) {
 		super({
 			name: 'pet'
 		});
 
-		this.get();
+		this.get({}, _userService.role('admin') ? { name: 'public' } : {});
 
 		this.filteredDocuments(this.petsByAuthor);
 	}

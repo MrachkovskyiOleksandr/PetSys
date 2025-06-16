@@ -99,7 +99,9 @@ export class PetsComponent {
 	};
 
 	get rows(): Pet[] {
-		return this._petService.petsByAuthor[this._userService.user._id];
+		return this._userService.role('admin')
+			? this._petService.pets
+			: this._petService.petsByAuthor[this._userService.user._id];
 	}
 
 	constructor(

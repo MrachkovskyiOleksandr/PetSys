@@ -15,7 +15,7 @@ export class PetallergyService extends CrudService<Petallergy> {
 			name: 'petallergy'
 		});
 
-		this.get();
+		this.get({}, { name: 'public' });
 
 		this.filteredDocuments(this.petallergysByAuthor);
 	}
