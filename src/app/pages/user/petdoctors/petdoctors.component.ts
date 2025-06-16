@@ -9,6 +9,7 @@ import { petdoctorFormComponents } from 'src/app/modules/petdoctor/formcomponent
 import { Petdoctor } from 'src/app/modules/petdoctor/interfaces/petdoctor.interface';
 import { PetdoctorService } from 'src/app/modules/petdoctor/services/petdoctor.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { CoreService } from 'wacom';
 
 @Component({
 	templateUrl: './petdoctors.component.html',
@@ -17,23 +18,34 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 })
 export class PetdoctorsComponent {
 	doctors: Petdoctor[] = [];
-
 	clinics: Petclinic[] = [];
+	specializationList: { _id: string; name: string }[] = [];
 
 	isMenuOpen = false;
 
 	clinic_id = '';
+	specialization = '';
 	search = '';
 
 	constructor(
+		public _userService: UserService,
 		private _petdoctorService: PetdoctorService,
 		private _form: FormService,
-		public us: UserService,
 		private _petclinicService: PetclinicService,
+		private _core: CoreService,
 		private translateService: TranslateService
 	) {
 		this.load();
 		this.selectorsLoad();
+
+		this._core.onComplete('petdoctor_loaded').then(() => {
+			this.specializationList = [
+				...new Set(this.doctors.map((doctor) => doctor.specialization))
+			].map((specialization) => ({
+				_id: specialization,
+				name: this.getTranslatedText('Doctor.' + specialization)
+			}));
+		});
 	}
 
 	form: FormInterface = this._form.getForm(
@@ -97,6 +109,10 @@ export class PetdoctorsComponent {
 
 		if (this.clinic_id) {
 			query += (query ? '&' : '') + 'clinic=' + this.clinic_id;
+		}
+		if (this.specialization) {
+			query +=
+				(query ? '&' : '') + 'specialization=' + this.specialization;
 		}
 		if (this.search) {
 			query += (query ? '&' : '') + 'search=' + this.search;

@@ -21,9 +21,9 @@ export class MypetsComponent {
 	breedList: { _id: string; name: string }[] = [];
 
 	constructor(
+		public _userService: UserService,
 		private _petService: PetService,
 		private _form: FormService,
-		public _userService: UserService,
 		private _core: CoreService,
 		private translateService: TranslateService
 	) {

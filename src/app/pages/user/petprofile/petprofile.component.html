@@ -1,41 +1,46 @@
 <div class="documents-wrapper" [class.documents-wrapper--open]="isMenuOpen">
-	<div class="documents-container">
+	<div class="documents-container" [class.hide-burger]="!isOwner">
 		<div class="documents-list">
-			<div
-				class="burger-wrap"
-				class="burger-wrap"
-				(click)="isMenuOpen=!isMenuOpen"
-				[class.burger-wrap--open]="isMenuOpen"
-			>
-				<div class="burger" [class.burger--close]="isMenuOpen"></div>
-			</div>
-			<div
-				class="documents-sidebar"
-				[class.documents-sidebar--open]="isMenuOpen"
-			>
-				<div class="documents-sidebar-content">
+			<div *ngIf="isOwner">
+				<div
+					class="burger-wrap"
+					class="burger-wrap"
+					(click)="isMenuOpen=!isMenuOpen"
+					[class.burger-wrap--open]="isMenuOpen"
+				>
 					<div
-						*ngIf="this.petprofile.author === _userService.user._id"
-					>
+						class="burger"
+						[class.burger--close]="isMenuOpen"
+					></div>
+				</div>
+				<div
+					class="documents-sidebar"
+					[class.documents-sidebar--open]="isMenuOpen"
+				>
+					<div class="documents-sidebar-content">
 						<div>
-							<wbutton (click)="update(petprofile)"
-								><span translate>Button.Edit</span></wbutton
-							>
-							<wbutton (click)="delete(petprofile)"
-								><span translate>Button.Delete</span></wbutton
-							>
-						</div>
-						<div>
-							<petallergy-selector
-								[value]="petprofile.allergies"
-								(wChange)="allergy = $event; updateAllergies(petprofile)"
-							>
-							</petallergy-selector>
+							<div>
+								<wbutton (click)="update(petprofile)"
+									><span translate>Button.Edit</span></wbutton
+								>
+								<wbutton (click)="delete(petprofile)"
+									><span translate
+										>Button.Delete</span
+									></wbutton
+								>
+							</div>
+							<div>
+								<petallergy-selector
+									[value]="petprofile.allergies"
+									(wChange)="allergy = $event; updateAllergies(petprofile)"
+								>
+								</petallergy-selector>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="documents-main">
+			<div class="documents-main" [class.hide-burger]="!isOwner">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
 						<img [src]="petPhoto" alt="Pet photo" class="pet-img" />

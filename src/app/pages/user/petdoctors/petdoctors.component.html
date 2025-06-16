@@ -17,7 +17,7 @@
 					<div class="documents-sidebar__title">
 						<span translate>Doctor.Pet Doctors</span>
 					</div>
-					<div *ngIf="us.role('admin')">
+					<div *ngIf="_userService.role('admin')">
 						<wbutton (click)="create()"
 							><span translate>Button.Create</span></wbutton
 						>
@@ -28,6 +28,13 @@
 							[value]="clinic_id"
 							(wChange)="clinic_id = $event; load()"
 						></petclinic-selector>
+						<wselect
+							[placeholder]="getTranslatedText('Doctor.Select specialization')"
+							[items]="specializationList"
+							[clearable]="true"
+							(modelChange)="specialization=$event; load()"
+							[searchable]="true"
+						></wselect>
 						<winput
 							[placeholder]="getTranslatedText('Common.Enter text...')"
 							[type]="'search'"

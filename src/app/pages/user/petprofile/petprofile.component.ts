@@ -28,6 +28,7 @@ export class PetprofileComponent {
 
 	user: User;
 	auth: boolean;
+	isOwner: boolean;
 
 	apiUrl = environment.url;
 	petPhoto =
@@ -45,6 +46,7 @@ export class PetprofileComponent {
 		private translateService: TranslateService
 	) {
 		this.user = this._userService.doc(this.petprofile.author);
+		this.isOwner = this.petprofile.author === _userService.user._id;
 	}
 
 	isMenuOpen = false;

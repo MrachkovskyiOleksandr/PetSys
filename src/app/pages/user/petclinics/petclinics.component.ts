@@ -6,9 +6,9 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { petclinicFormComponents } from 'src/app/modules/petclinic/formcomponents/petclinic.formcomponents';
 import { Petclinic } from 'src/app/modules/petclinic/interfaces/petclinic.interface';
 import { PetclinicService } from 'src/app/modules/petclinic/services/petclinic.service';
-import { Petdrug } from 'src/app/modules/petdrug/interfaces/petdrug.interface';
-import { PetdrugService } from 'src/app/modules/petdrug/services/petdrug.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
+// import { Petdrug } from 'src/app/modules/petdrug/interfaces/petdrug.interface';
+// import { PetdrugService } from 'src/app/modules/petdrug/services/petdrug.service';
 
 @Component({
 	templateUrl: './petclinics.component.html',
@@ -17,27 +17,29 @@ import { UserService } from 'src/app/modules/user/services/user.service';
 })
 export class PetclinicsComponent {
 	clinics: Petclinic[] = [];
-	drugs: Petdrug[] = [];
+	// drugs: Petdrug[] = [];
 
 	isMenuOpen = false;
 
-	clinic_drug = '';
+	// clinic_drug = '';
 	search = '';
 
 	constructor(
 		private _petclinicService: PetclinicService,
-		private _petdrugService: PetdrugService,
 		private _form: FormService,
 		public us: UserService,
 		private translateService: TranslateService
-	) {
+	) // private _petdrugService: PetdrugService,
+	{
 		this.load();
 
+		/*
 		this._petdrugService.get().subscribe((drugs) => {
 			this.drugs.splice(0, this.drugs.length);
 
 			this.drugs.push(...drugs);
 		});
+		*/
 	}
 
 	form: FormInterface = this._form.getForm(
@@ -87,12 +89,14 @@ export class PetclinicsComponent {
 	private _query(): string {
 		let query = '';
 
-		if (this.clinic_drug) {
-			query += (query ? '&' : '') + 'clinic_drug=' + this.clinic_drug;
-		}
 		if (this.search) {
 			query += (query ? '&' : '') + 'search=' + this.search;
 		}
+		/*
+		if (this.clinic_drug) {
+			query += (query ? '&' : '') + 'clinic_drug=' + this.clinic_drug;
+		}
+		*/
 
 		return query;
 	}
