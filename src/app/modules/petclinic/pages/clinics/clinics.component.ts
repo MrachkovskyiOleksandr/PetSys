@@ -134,11 +134,13 @@ export class ClinicsComponent {
 		this._core.afterWhile(
 			this,
 			() => {
-				this._petclinicService.get({ page }).subscribe((rows) => {
-					this.rows.splice(0, this.rows.length);
+				this._petclinicService
+					.get({ page }, { name: 'public' })
+					.subscribe((rows) => {
+						this.rows.splice(0, this.rows.length);
 
-					this.rows.push(...rows);
-				});
+						this.rows.push(...rows);
+					});
 			},
 			250
 		);
