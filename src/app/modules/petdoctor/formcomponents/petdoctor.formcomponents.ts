@@ -18,7 +18,7 @@ export const petdoctorFormComponents = {
 			]
 		},
 		{
-			name: 'Text',
+			name: 'Select',
 			key: 'specialization',
 			fields: [
 				{
@@ -28,6 +28,16 @@ export const petdoctorFormComponents = {
 				{
 					name: 'Label',
 					value: 'Specialization'
+				},
+				{
+					name: 'Items',
+					value: [
+						'Загальна ветеринарія',
+						'Дерматолог',
+						'Хірург',
+						'Неонатолог',
+						'Терапевт'
+					]
 				}
 			]
 		},

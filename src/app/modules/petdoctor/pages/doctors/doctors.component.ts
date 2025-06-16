@@ -136,7 +136,7 @@ export class DoctorsComponent {
 			this,
 			() => {
 				this._petdoctorService
-					.get({ page, query: this._query() })
+					.get({ page, query: this._query() }, { name: 'public' })
 					.subscribe((rows) => {
 						this.rows.splice(0, this.rows.length);
 
