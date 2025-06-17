@@ -1,0 +1,1 @@
+import{hb as e,r}from"./chunk-P3KN7PBT.js";var a=(()=>{class t extends e{constructor(){super({name:"petdoctor"})}static{this.\u0275fac=function(o){return new(o||t)}}static{this.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{a};
