@@ -101,9 +101,12 @@ $transition: if(
 // theme
 :root {
 	--c-white: #fff;
-	--c-basic: #3558ae;
-	--c-primary: #256eff;
-	--c-primary-hover: #0051f1;
+	--c-basic: #1a8f4f;
+	// --c-basic: #3558ae;
+	--c-primary: #18694a;
+	// --c-primary: #256eff;
+	--c-primary-hover: #03a567;
+	// --c-primary-hover: #0051f1;
 	--c-secondary: rgb(197, 61, 61);
 	--c-secondary-hover: rgb(150, 42, 42);
 	--c-bg-primary: #f3f4f7;
@@ -115,6 +118,7 @@ $transition: if(
 	--c-text-secondary: #19235c;
 	--c-placeholder: #313335ab;
 	--c-img-round: 50%;
+	--c-scroll: #18694a;
 	--card-background: #fefefe;
 	--card-border-radius: 10px;
 	--card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -136,13 +140,14 @@ $transition: if(
 	--transition: all 0.3s;
 	--events: #4c8e9d;
 	--border: rgba(102, 91, 91, 0.432);
-	--header-doc:#d8d8d8;
-	--doc-products:#f5f5f5;
+	--header-doc: #d8d8d8;
+	--doc-products: #f5f5f5;
 }
 
 html.dark:root {
 	--c-white: #fff;
-	--c-basic: #333;
+	// --c-basic: #333;
+	--c-basic: #1a8f4f;
 	--c-bg-primary: #282828;
 	--c-bg-secondary: #343434;
 	--c-bg-tertiary: #404040;
@@ -155,6 +160,6 @@ html.dark:root {
 	--day-name: #dad5d5;
 	--events: #1c2e32;
 	--border: rgb(255 255 255 / 23%);
-	--header-doc:#1b1b1be3;
-	--doc-products:#252222;
+	--header-doc: #1b1b1be3;
+	--doc-products: #252222;
 }

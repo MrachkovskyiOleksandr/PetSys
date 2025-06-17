@@ -321,14 +321,19 @@ wform {
 	&-main {
 		flex: 1 1;
 		padding-left: 280px;
+
 		&-content {
 			padding: 15px;
 		}
+
 		&-row {
 			padding: 10px 20px;
 			background: var(--c-bg-secondary);
 			margin-bottom: 20px;
 			border-radius: 10px;
+			color: var(--c-text-primary);
+
+			font-size: 1.2em;
 
 			.pet-img {
 				height: 150px;
@@ -336,7 +341,12 @@ wform {
 			}
 			.owner-img {
 				height: 75px;
+				border-radius: 10px;
 			}
+		}
+
+		h3 {
+			color: var(--c-text-primary);
 		}
 	}
 	&-sidebar {
@@ -375,16 +385,9 @@ wform {
 		wselect {
 			margin-bottom: 10px;
 		}
-		&__img {
-			img {
-				width: 100px;
-				height: 100px;
-				object-fit: cover;
-				border-radius: 12px;
-			}
-		}
 		&__title {
 			font-weight: 600;
+			font-size: 1.75em;
 			padding: 15px 0 5px 0;
 			color: var(--c-text-primary);
 		}
@@ -445,6 +448,7 @@ wform {
 		flex: 0 0 300px;
 		img {
 			width: 100%;
+			object-fit: cover;
 		}
 	}
 	&-text {
@@ -459,14 +463,30 @@ wform {
 			color: var(--c-text-primary);
 		}
 	}
+	&__img {
+		img {
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+	}
 	&__title {
-		font-size: 2em;
+		font-size: 1.75em;
 		font-weight: 600;
 		padding-bottom: 10px;
 		color: var(--c-text-primary);
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: keep-all;
 	}
 	&__description {
 		color: var(--c-text-primary);
+	}
+	&__email,
+	&__phone {
+		word-break: break-word;
 	}
 	&__btn {
 		max-width: 200px;
@@ -528,13 +548,15 @@ wform {
 		display: flex;
 		flex-direction: row;
 		img {
-			height: 140px;
+			height: 120px;
 			border-radius: 10px;
 			flex: 4;
+			object-fit: cover;
+			border-radius: 10px;
 		}
 		a,
 		a:visited {
-			color: #fff;
+			color: var(--c-text-primary);
 		}
 		span:hover {
 			cursor: pointer;
@@ -542,6 +564,7 @@ wform {
 		&-description {
 			padding: 0 15px;
 			flex: 3;
+			overflow: hidden;
 		}
 		&-buttons {
 			display: flex;
@@ -552,6 +575,44 @@ wform {
 
 			span {
 				font-size: 2.5em;
+				color: var(--c-text-primary);
+			}
+			span:hover {
+				color: var(--c-primary-hover);
+			}
+			// .delete-button {
+			// 	color: var(--c-secondary);
+			// }
+			.delete-button:hover {
+				color: var(--c-secondary);
+				// color: var(--c-secondary-hover);
+			}
+		}
+		&-doctor {
+			display: flex;
+			flex-direction: row;
+
+			img {
+				flex: 1;
+				height: 100px;
+				width: 100px;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+			a,
+			a:visited {
+				color: var(--c-text-primary);
+			}
+			&-description {
+				padding: 0 15px;
+				overflow: hidden;
+				flex: 2;
+
+				.documents {
+					&__title {
+						font-size: 1.2em;
+					}
+				}
 			}
 		}
 	}
@@ -570,21 +631,24 @@ wform {
 @media screen and (max-width: 991px) {
 	.documents-sidebar {
 		flex: 0 0 100%;
-		max-width: calc(100% - 10px);
+		max-width: calc(100% - 42px); // calc(100% - 10px)
 		height: 0;
 		border-radius: 12px;
 		position: fixed;
 		top: 15px;
 		left: 0;
-		margin: 5px;
+		margin: 19px;
 		transition: all 0.3s;
 		overflow: hidden;
 		&--open {
-			height: calc(100% - 95px);
+			height: calc(100% - 125px); // calc(100% - 115px)
 		}
-	}
-	.documents-sidebar-content {
-		padding: 65px 15px 15px 15px;
+		&-content {
+			padding: 40px 15px 15px 15px;
+			&-buttons {
+				padding-top: 15px;
+			}
+		}
 	}
 	.documents-main {
 		padding: 20px 0 0;
@@ -634,11 +698,11 @@ wform {
 	.burger-wrap {
 		display: flex;
 		align-items: center;
-		position: absolute;
+		position: fixed; // absolute
 		z-index: 3;
-		right: 3px;
+		right: 7px; // -9px
+		top: 57px; //top: 50%;
 		transform: translate(-50%, -50%);
-		//top: 50%;
 	}
 	.documents-sidebar__close {
 		display: block;
