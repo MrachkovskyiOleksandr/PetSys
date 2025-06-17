@@ -18,7 +18,7 @@
 					[class.documents-sidebar--open]="isMenuOpen"
 				>
 					<div class="documents-sidebar-content">
-						<div>
+						<div class="documents-sidebar-content-buttons">
 							<div>
 								<wbutton (click)="update(petprofile)"
 									><span translate>Button.Edit</span></wbutton
@@ -80,7 +80,7 @@
 							class="owner-img"
 						/>
 						<div>{{user.name}}</div>
-						<div>
+						<div class="documents__email">
 							<span translate>Profile.Email:</span> {{user.email}}
 						</div>
 					</div>

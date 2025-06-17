@@ -18,13 +18,7 @@
 					[class.documents-sidebar--open]="isMenuOpen"
 				>
 					<div class="documents-sidebar-content">
-						<div class="documents-sidebar__img">
-							<img src="assets/default.png" alt="" />
-						</div>
-						<div class="documents-sidebar__title">
-							{{petclinic.name}}
-						</div>
-						<div>
+						<div class="documents-sidebar-content-buttons">
 							<wbutton (click)="update(petclinic)"
 								><span translate>Button.Edit</span></wbutton
 							>
@@ -38,11 +32,15 @@
 			<div class="documents-main" [class.hide-burger]="!us.role('admin')">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
+						<div class="documents__img">
+							<img src="assets/default.png" alt="" />
+						</div>
 						<div class="documents__title">{{petclinic.name}}</div>
 						<div class="documents__address">
 							<span translate>Clinic.Address: </span
 							>{{petclinic.address}}
 						</div>
+						<hr />
 						<div class="documents__phone">
 							<span translate>Clinic.Phone: </span
 							>{{petclinic.phone}}
@@ -51,6 +49,7 @@
 							<span translate>Clinic.Email: </span
 							>{{petclinic.email}}
 						</div>
+						<hr />
 						<div class="documents__workingHours">
 							<span translate>Clinic.Working hours: </span
 							>{{petclinic.workingHours}}
@@ -59,6 +58,15 @@
 							<span translate>Clinic.Description: </span
 							>{{petclinic.description}}
 						</div>
+					</div>
+
+					<h3><span translate>Clinic.Doctors</span></h3>
+					<div
+						*ngFor="let doctor of petdoctors"
+						class="documents-main-row"
+					>
+						<app-clinicdoctors [doctor]="doctor">
+						</app-clinicdoctors>
 					</div>
 				</div>
 			</div>

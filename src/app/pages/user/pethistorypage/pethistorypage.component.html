@@ -14,13 +14,7 @@
 				[class.documents-sidebar--open]="isMenuOpen"
 			>
 				<div class="documents-sidebar-content">
-					<div class="documents-sidebar__img">
-						<img src="assets/default.png" alt="" />
-					</div>
-					<div class="documents-sidebar__title">
-						{{petrecord.name}}
-					</div>
-					<div>
+					<div class="documents-sidebar-content-buttons">
 						<wbutton (click)="update(petrecord)"
 							><span translate>Button.Edit</span></wbutton
 						>
@@ -33,6 +27,9 @@
 			<div class="documents-main">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
+						<div class="documents__img">
+							<img src="assets/default.png" alt="" />
+						</div>
 						<div class="documents__title">{{petrecord.name}}</div>
 						<div class="documents__date">
 							<span translate>Record.Data: </span

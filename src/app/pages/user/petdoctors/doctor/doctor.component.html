@@ -1,12 +1,24 @@
 <div class="documents-card">
-	<div class="documents-card-description">
-		<a routerLink="/petdoctorpage/{{doctor._id}}">
+	<a routerLink="/petdoctorpage/{{doctor._id}}">
+		<img
+			class="documents__img"
+			[src]="doctor.thumb ? apiUrl + doctor.thumb : 'assets/default.png'"
+			alt="Doctor photo"
+		/>
+	</a>
+	<a
+		routerLink="/petdoctorpage/{{doctor._id}}"
+		class="documents-card-description"
+	>
+		<div>
 			<div class="documents__title">{{doctor.name}}</div>
 			<div class="documents__description">{{doctor.specialization}}</div>
-		</a>
-	</div>
+		</div>
+	</a>
 	<div class="documents-card-buttons" *ngIf="us.role('admin')">
 		<span (click)="update(doctor)" class="material-icons">edit</span>
-		<span (click)="delete(doctor)" class="material-icons">delete</span>
+		<span (click)="delete(doctor)" class="material-icons delete-button"
+			>delete</span
+		>
 	</div>
 </div>

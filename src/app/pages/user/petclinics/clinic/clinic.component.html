@@ -1,12 +1,17 @@
 <div class="documents-card">
-	<div class="documents-card-description">
-		<a routerLink="/petclinicpage/{{clinics._id}}">
+	<a
+		routerLink="/petclinicpage/{{clinics._id}}"
+		class="documents-card-description"
+	>
+		<div>
 			<div class="documents__title">{{clinics.name}}</div>
 			<div class="documents__description">{{clinics.address}}</div>
-		</a>
-	</div>
+		</div>
+	</a>
 	<div class="documents-card-buttons" *ngIf="us.role('admin')">
 		<span (click)="update(clinics)" class="material-icons">edit</span>
-		<span (click)="delete(clinics)" class="material-icons">delete</span>
+		<span (click)="delete(clinics)" class="material-icons delete-button"
+			>delete</span
+		>
 	</div>
 </div>

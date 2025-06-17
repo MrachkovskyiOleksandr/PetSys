@@ -1,13 +1,16 @@
 <!-- <p>history works!</p> -->
 <div class="documents-card">
-	<div class="documents-card-description">
-		<a routerLink="/pethistorypage/{{record._id}}">
+	<a
+		routerLink="/pethistorypage/{{record._id}}"
+		class="documents-card-description"
+	>
+		<div>
 			<div class="documents__title">{{record.name}}</div>
 			<div class="documents__description">
 				{{record._id|mongodate|date:'d MMMM y'}}
 			</div>
-		</a>
-	</div>
+		</div>
+	</a>
 	<div class="documents-card-buttons">
 		<span (click)="update(record)" class="material-icons">edit</span>
 		<span (click)="delete(record)" class="material-icons">delete</span>

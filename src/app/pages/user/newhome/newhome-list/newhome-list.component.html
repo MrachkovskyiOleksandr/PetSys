@@ -6,10 +6,10 @@
 			alt="Pet photo"
 		/>
 	</a>
-	<div class="documents-card-description">
-		<a routerLink="/petprofile/{{pet._id}}">
+	<a routerLink="/petprofile/{{pet._id}}" class="documents-card-description">
+		<div>
 			<div class="documents__title">{{pet.name}}</div>
 			<div class="documents__description">{{pet.description}}</div>
-		</a>
-	</div>
+		</div>
+	</a>
 </div>

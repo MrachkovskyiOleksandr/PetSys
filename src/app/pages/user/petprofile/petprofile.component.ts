@@ -42,7 +42,6 @@ export class PetprofileComponent {
 		private _alert: AlertService,
 		private _translate: TranslateService,
 		public _userService: UserService,
-		private _petallergyService: PetallergyService,
 		private translateService: TranslateService
 	) {
 		this.user = this._userService.doc(this.petprofile.author);

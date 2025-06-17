@@ -18,13 +18,7 @@
 					[class.documents-sidebar--open]="isMenuOpen"
 				>
 					<div class="documents-sidebar-content">
-						<div class="documents-sidebar__img">
-							<img src="assets/default.png" alt="" />
-						</div>
-						<div class="documents-sidebar__title">
-							{{petdoctor.name}}
-						</div>
-						<div>
+						<div class="documents-sidebar-content-buttons">
 							<wbutton (click)="update(petdoctor)"
 								><span translate>Button.Edit</span></wbutton
 							>
@@ -38,11 +32,15 @@
 			<div class="documents-main" [class.hide-burger]="!us.role('admin')">
 				<div class="documents-main-content">
 					<div class="documents-main-row">
+						<div class="documents__img">
+							<img src="assets/default.png" alt="" />
+						</div>
 						<div class="documents__title">{{petdoctor.name}}</div>
 						<div class="documents__specialization">
 							<span translate>Doctor.Specialization: </span
 							>{{petdoctor.specialization}}
 						</div>
+						<hr />
 						<div class="documents__phone">
 							<span translate>Doctor.Phone: </span
 							>{{petdoctor.phone}}
@@ -51,6 +49,7 @@
 							<span translate>Doctor.Email: </span
 							>{{petdoctor.email}}
 						</div>
+						<hr />
 						<div class="documents__workingHours">
 							<span translate>Doctor.Working hours: </span
 							>{{petdoctor.workingHours}}
@@ -60,6 +59,8 @@
 							>{{petdoctor.description}}
 						</div>
 					</div>
+					<!-- <h3><span>Doctor.Clinic</span></h3>
+					<div class="documents-main-row"></div> -->
 				</div>
 			</div>
 		</div>

@@ -6,6 +6,7 @@ import { TranslateService } from 'src/app/core/modules/translate/translate.servi
 import { petFormComponents } from 'src/app/modules/pet/formcomponents/pet.formcomponents';
 import { Pet } from 'src/app/modules/pet/interfaces/pet.interface';
 import { PetService } from 'src/app/modules/pet/services/pet.service';
+import { PetallergyService } from 'src/app/modules/petallergy/services/petallergy.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { environment } from 'src/environments/environment.prod';
 import { CoreService } from 'wacom';
@@ -25,6 +26,7 @@ export class MypetsComponent {
 		private _petService: PetService,
 		private _form: FormService,
 		private _core: CoreService,
+		private _petallergyService: PetallergyService,
 		private translateService: TranslateService
 	) {
 		this._core.onComplete('pet_loaded').then(() => {

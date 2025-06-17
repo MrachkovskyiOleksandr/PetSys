@@ -6,6 +6,7 @@ import { petdoctorFormComponents } from 'src/app/modules/petdoctor/formcomponent
 import { Petdoctor } from 'src/app/modules/petdoctor/interfaces/petdoctor.interface';
 import { PetdoctorService } from 'src/app/modules/petdoctor/services/petdoctor.service';
 import { UserService } from 'src/app/modules/user/services/user.service';
+import { environment } from 'src/environments/environment.prod';
 import { AlertService, CoreService } from 'wacom';
 
 @Component({
@@ -19,6 +20,8 @@ export class DoctorComponent {
 	@Input() doctor: Petdoctor;
 
 	@Output() load = new EventEmitter();
+
+	apiUrl = environment.url;
 
 	constructor(
 		private _translate: TranslateService,
