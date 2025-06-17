@@ -8,5 +8,7 @@ export interface Petdoctor extends CrudDocument {
 	workingHours: string;
 	description: string;
 
+	thumb: string;
+
 	clinic: string;
 }
